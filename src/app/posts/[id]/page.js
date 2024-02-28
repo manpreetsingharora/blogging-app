@@ -1,9 +1,15 @@
-// import CreateApolloClient from "@/apollo/client";
-// import { getSinglePost } from "@/graphql/queries";
+import CreateApolloClient from "@/apollo/client";
+import { getSinglePost } from "@/graphql/queries";
 
-export default function SinglePost({params})
+export default async function SinglePost({params})
 {
-    // const client = CreateApolloClient();
-    // const data = client.query({query : getSinglePost} , {variable : params.id = new ID});
-    return(`This is single post page for post id ${params.id}`);
+    const client = CreateApolloClient();
+    const data = await client.query({query : getSinglePost , variables : { id: params.id}});
+    const post = data?.data?.post;
+    return(<>
+    <h1>{post.title}</h1>
+    <div dangerouslySetInnerHTML={{ __html: post.excerpt }}></div>
+    <img src={post?.featuredImage?.node?.guid}/>
+    <div dangerouslySetInnerHTML={{ __html: post.content }}></div>
+    </>);
 }

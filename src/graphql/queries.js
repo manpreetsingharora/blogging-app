@@ -16,7 +16,7 @@ export const getPosts = gql`query getPosts {
     }
   }`;
 
- export const getSinglePost = gql`query getSinglePost($id: ID) {
+ export const getSinglePost = gql`query getSinglePost($id: ID! = "") {
     post(id: $id, idType: DATABASE_ID) {
       databaseId
       title
