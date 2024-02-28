@@ -18,8 +18,8 @@ export default async function Home()
     <h3>{post.title}</h3>
     <div dangerouslySetInnerHTML={{ __html: post.excerpt }}></div>
     <Link href={`/posts/${post.databaseId}`}>Read More</Link>
-   </div> 
+    <br/><br/>
+   </div>
   )})}
-
   </>);
 }
