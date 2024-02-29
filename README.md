@@ -1,3 +1,5 @@
+This is a blogging web app. This application is using Wordpress as headless CMS. The application is fetching data using graphql APIs. This application is dependent on Apollo Client library.<br/>Current Features<br/><ul><li>posts listing</li><li>single post page</li></ul>
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
